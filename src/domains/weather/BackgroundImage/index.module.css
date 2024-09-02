@@ -1,0 +1,22 @@
+.container {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+.container::after {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  backdrop-filter: blur(3px);
+  background-color: rgba(255,255,255, 0.5);
+  content: "";
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+}

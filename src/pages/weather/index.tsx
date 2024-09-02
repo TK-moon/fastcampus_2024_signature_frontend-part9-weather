@@ -46,7 +46,9 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     response_format: "b64_json",
   });
 
-  const image = images.data.at(0)?.b64_json;
+  const image_data_url = `data:image/jpeg;base64,${
+    images.data.at(0)?.b64_json
+  }`;
 
   // const live = await weather.live();
   // const forecast = await weather.forecast();
@@ -59,7 +61,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       today_temperature,
       merged_forecast,
       update_time: dayjs().format("YYYY-MM-DD HH:mm:ss"),
-      image,
+      image_data_url,
     },
   };
 };
