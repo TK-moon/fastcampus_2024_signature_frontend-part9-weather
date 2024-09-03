@@ -1,0 +1,63 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 30px;
+  margin-bottom: 37px;
+  margin-top: 30px;
+}
+
+.current_temperature {
+  font-size: 48px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  margin-right: 14px;
+}
+
+.current_sky {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.today_temperature {
+  display: flex;
+  column-gap: 16px;
+  margin-bottom: 10px;
+}
+
+.today_temperature dl {
+  display: flex;
+  column-gap: 4px;
+}
+
+.today_temperature > dl > dt {
+font-size: 22px;
+font-weight: 500;
+}
+
+.today_temperature > dl > dd {
+  font-size: 22px;
+  font-weight: 600;
+  }
+
+.today_temperature_description {
+  display: block;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  column-gap: 20px;
+  row-gap: 5px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.info > dl {
+  display: flex;
+  column-gap: 4px;
+}

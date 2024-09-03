@@ -1,6 +1,7 @@
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import { FC } from "react";
+import styles from "./index.module.css";
 
 interface Props {
   update_time: string;
@@ -12,9 +13,11 @@ const Header: FC<Props> = (props) => {
   const { update_time } = props;
 
   return (
-    <header>
-      <h1>Weather</h1>
-      <span>{dayjs(update_time).fromNow()}</span>
+    <header className={styles.container}>
+      <h1 className={styles.title}>현재날씨</h1>
+      <span className={styles.update}>
+        업데이트 {dayjs(update_time).fromNow()}
+      </span>
     </header>
   );
 };

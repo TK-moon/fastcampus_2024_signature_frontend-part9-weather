@@ -2,6 +2,7 @@ import { WeatherAdapterInterface } from "@/api/weather/types";
 import { FC } from "react";
 import { WindDirection } from "../component/WindDirection";
 import { getRainyType } from "../utils";
+import styles from "./index.module.css";
 
 interface Props {
   live: Awaited<ReturnType<WeatherAdapterInterface["live"]>>;
@@ -14,13 +15,17 @@ const LiveSection: FC<Props> = (props) => {
   const { live, today_temperature } = props;
 
   return (
-    <section>
+    <section className={styles.container}>
       <div>
-        <div>
-          <strong>{live.T1H?.obsrValue}℃</strong>
-          <strong>{getRainyType(live.PTY?.obsrValue)}</strong>
-        </div>
-        <div>
+        <strong className={styles.current_temperature}>
+          {live.T1H?.obsrValue}℃
+        </strong>
+        <strong className={styles.current_sky}>
+          {getRainyType(live.PTY?.obsrValue)}
+        </strong>
+      </div>
+      <div>
+        <div className={styles.today_temperature}>
           <dl>
             <dt>최저</dt>
             <dd>
@@ -33,10 +38,12 @@ const LiveSection: FC<Props> = (props) => {
               <strong>{today_temperature.max}℃</strong>
             </dd>
           </dl>
-          <span>(오전 6시, 오후 3시)</span>
         </div>
+        <span className={styles.today_temperature_description}>
+          (오전 6시, 오후 3시)
+        </span>
       </div>
-      <div>
+      <div className={styles.info}>
         <dl>
           <dt>강수량</dt>
           <dd>{live.RN1?.obsrValue}mm</dd>
