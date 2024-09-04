@@ -4,7 +4,6 @@ import { mergeForecastWithShortTermForecast } from "./utils";
 import { LiveSection } from "./LiveSection";
 import { ForecastSection } from "./ForecastSection";
 import { Header } from "./Header";
-import Image from "next/image";
 import { BackgroundImage } from "./BackgroundImage";
 import { Layout } from "@/component/Layout";
 

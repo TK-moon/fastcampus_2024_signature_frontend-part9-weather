@@ -50,11 +50,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     images.data.at(0)?.b64_json
   }`;
 
-  // const live = await weather.live();
-  // const forecast = await weather.forecast();
-  // const today_temperature = await weather.todayTemperature();
-  // const short_term_forecast = await weather.shortTermForecast();
-
   return {
     props: {
       live,
@@ -63,6 +58,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       update_time: dayjs().format("YYYY-MM-DD HH:mm:ss"),
       image_data_url,
     },
+    revalidate: 60 * 60,
   };
 };
 
